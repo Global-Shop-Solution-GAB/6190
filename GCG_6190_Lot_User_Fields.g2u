@@ -1,0 +1,330 @@
+Program.Sub.ScreenSU.Start
+Gui.FormLotUser..Create
+Gui.FormLotUser..Caption("Item Master User Fields Update By Lot")
+Gui.FormLotUser..Size(6150,5880)
+Gui.FormLotUser..MinX(0)
+Gui.FormLotUser..MinY(0)
+Gui.FormLotUser..Position(0,0)
+Gui.FormLotUser..BackColor(-2147483633)
+Gui.FormLotUser..MousePointer(0)
+Gui.FormLotUser..MaxButton(False)
+Gui.FormLotUser..MinButton(False)
+Gui.FormLotUser..Sizeable(False)
+Gui.FormLotUser..Event(UnLoad,FormLotUser_UnLoad)
+Gui.FormLotUser.lblUserField1.Create(Label,"User Field 1",True,1935,255,0,105,855,True,0,"Arial",8,-2147483633,0)
+Gui.FormLotUser.lblUserField2.Create(Label,"User Field 2",True,1935,255,0,105,1590,True,0,"Arial",8,-2147483633,0)
+Gui.FormLotUser.lblUserField3.Create(Label,"User Field 3",True,1935,255,0,105,2340,True,0,"Arial",8,-2147483633,0)
+Gui.FormLotUser.lblUserField4.Create(Label,"User Field 4",True,1935,255,0,105,3075,True,0,"Arial",8,-2147483633,0)
+Gui.FormLotUser.lblUserField5.Create(Label,"User Field 5",True,1935,255,0,120,3810,True,0,"Arial",8,-2147483633,0)
+Gui.FormLotUser.lblUserField6.Create(Label,"User Field 6",True,1935,255,0,3360,855,True,0,"Arial",8,-2147483633,0)
+Gui.FormLotUser.lblUserField7.Create(Label,"User Field 7",True,1935,255,0,3360,1590,True,0,"Arial",8,-2147483633,0)
+Gui.FormLotUser.lblUserField8.Create(Label,"User Field 8",True,1935,255,0,3360,2340,True,0,"Arial",8,-2147483633,0)
+Gui.FormLotUser.lblUserField9.Create(Label,"User Field 9",True,1935,255,0,3360,3075,True,0,"Arial",8,-2147483633,0)
+Gui.FormLotUser.txtLot.Create(TextBox,"",True,1845,300,0,105,375,True,0,"Arial",8,-2147483643,1)
+Gui.FormLotUser.txtLot.MaxLength(15)
+Gui.FormLotUser.txtLot.Event(KeyPressEnter,txtLot_KeyPressEnter)
+Gui.FormLotUser.txtLot.Event(GotFocus,Got_Focus)
+Gui.FormLotUser.txtUserField1.Create(TextBox,"",True,2160,300,0,105,1140,True,0,"Arial",8,-2147483643,1)
+Gui.FormLotUser.txtUserField1.MaxLength(15)
+Gui.FormLotUser.txtUserField1.Event(GotFocus,Got_Focus)
+Gui.FormLotUser.txtUserField2.Create(TextBox,"",True,2160,300,0,105,1890,True,0,"Arial",8,-2147483643,1)
+Gui.FormLotUser.txtUserField2.MaxLength(15)
+Gui.FormLotUser.txtUserField2.Event(GotFocus,Got_Focus)
+Gui.FormLotUser.txtUserField3.Create(TextBox,"",True,2160,300,0,105,2625,True,0,"Arial",8,-2147483643,1)
+Gui.FormLotUser.txtUserField3.MaxLength(15)
+Gui.FormLotUser.txtUserField3.Event(GotFocus,Got_Focus)
+Gui.FormLotUser.txtUserField4.Create(TextBox,"",True,2160,300,0,105,3360,True,0,"Arial",8,-2147483643,1)
+Gui.FormLotUser.txtUserField4.MaxLength(15)
+Gui.FormLotUser.txtUserField4.Event(GotFocus,Got_Focus)
+Gui.FormLotUser.txtUserField5.Create(TextBox,"",True,2160,300,0,105,4095,True,0,"Arial",8,-2147483643,1)
+Gui.FormLotUser.txtUserField5.MaxLength(15)
+Gui.FormLotUser.txtUserField5.Event(GotFocus,Got_Focus)
+Gui.FormLotUser.txtUserField6.Create(TextBox,"",True,2160,300,0,3360,1140,True,0,"Arial",8,-2147483643,1)
+Gui.FormLotUser.txtUserField6.MaxLength(15)
+Gui.FormLotUser.txtUserField6.Event(GotFocus,Got_Focus)
+Gui.FormLotUser.txtUserField7.Create(TextBox,"",True,2160,300,0,3360,1890,True,0,"Arial",8,-2147483643,1)
+Gui.FormLotUser.txtUserField7.MaxLength(15)
+Gui.FormLotUser.txtUserField7.Event(GotFocus,Got_Focus)
+Gui.FormLotUser.txtUserField8.Create(TextBox,"",True,2160,300,0,3360,2625,True,0,"Arial",8,-2147483643,1)
+Gui.FormLotUser.txtUserField8.MaxLength(15)
+Gui.FormLotUser.txtUserField8.Event(GotFocus,Got_Focus)
+Gui.FormLotUser.txtUserField9.Create(TextBox,"",True,2160,300,0,3360,3360,True,0,"Arial",8,-2147483643,1)
+Gui.FormLotUser.txtUserField9.MaxLength(15)
+Gui.FormLotUser.txtUserField9.Event(GotFocus,Got_Focus)
+Gui.FormLotUser.cmdSave.Create(Button)
+Gui.FormLotUser.cmdSave.Size(855,375)
+Gui.FormLotUser.cmdSave.Position(105,4725)
+Gui.FormLotUser.cmdSave.Caption("Save")
+Gui.FormLotUser.cmdSave.Event(Click,cmdSave_Click)
+Gui.FormLotUser.lblLot.Create(Label,"Lot",True,1935,255,0,105,105,True,0,"Arial",8,-2147483633,0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+
+F.Intrinsic.Control.SelectCase(V.Caller.Hook)
+	F.Intrinsic.Control.Case(15710)
+		V.Passed.000021.Set("Lot User Flds")
+		F.Intrinsic.Control.End
+		
+	F.Intrinsic.Control.Case(15780)
+		F.Intrinsic.Control.CallSub(Set_Label_Captions)
+		F.Intrinsic.Control.CallSub(Build_Empty_DT)
+		
+		Gui.FormLotUser..Show
+		
+		Gui.FormLotUser..AlwaysOnTop(True)
+		Gui.FormLotUser..AlwaysOnTop(False)
+
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6190_Lot_User_Fields.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormLotUser_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Main.End
+
+Program.Sub.txtLot_KeyPressEnter.Start
+F.Intrinsic.Control.SetErrorHandler("txtLot_KeyPressEnter_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+V.Local.sLot.Declare(String,"")
+V.Local.sSql.Declare(String,"")
+V.Local.iUser.Declare(Long,0)
+V.Local.sField.Declare(String,"")
+V.Local.sUser.Declare(String,"")
+V.Local.sText.Declare(String,"")
+V.Local.sTemp.Declare(String,"")
+
+V.Local.sLot.Set(V.Screen.FormLotUser!txtLot.Text)
+
+F.Intrinsic.Control.If(V.Local.sLot.Left2,=,"$%")
+	F.Intrinsic.String.Split(V.Local.sLot,"$%",V.Local.sTemp)
+	V.Local.sLot.Set(V.Local.sTemp.Trim)
+	Gui.FormLotUser.txtLot.Text(V.Local.sLot)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.Local.sLot.Trim,<>,"")
+	F.Intrinsic.String.Build("Select Part, Quantity, Lot, User_Field_1, User_Field_2, User_Field_3, User_Field_4, User_Field_5, User_Field_6, User_Field_7, User_Field_8, User_Field_9 From V_Item_Master Where rtrim(Lot) = '{0}' and Quantity > 0",V.Local.sLot,V.Local.sSql)
+	
+	F.ODBC.Connection!Con.OpenCompanyConnection
+	
+	F.Data.DataTable.CreateFromSQL("TempLot","con",V.Local.sSql,True)
+
+	F.ODBC.Connection!Con.Close
+	
+	F.Intrinsic.Control.If(V.DataTable.TempLot.RowCount--,<>,-1)
+		F.Data.DataTable.Merge("TempLot","Lot",False,2)
+		F.Intrinsic.Control.For(V.Local.iUser,1,9,1)
+			F.Intrinsic.String.Build("User_Field_{0}",V.Local.iUser,V.Local.sField)
+			F.Intrinsic.String.Build("txtUserField{0}",V.Local.iUser,V.Local.sUser)
+			V.Local.sText.Set(V.DataTable.TempLot(V.DataTable.TempLot.RowCount--).[V.Local.sField]!FieldValTrim)
+			Gui.FormLotUser.[V.Local.sUser].Text(V.Local.sText)
+		F.Intrinsic.Control.Next(V.Local.iUser)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("Lot Record Not Found in Item Master.........","Attention")
+	F.Intrinsic.Control.EndIf
+	
+	F.Data.DataTable.Close("TempLot")
+	
+	Gui.FormLotUser.txtUserField1.SetFocus
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtLot_KeyPressEnter_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6190_Lot_User_Fields.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormLotUser_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.txtLot_KeyPressEnter.End
+
+Program.Sub.FormLotUser_UnLoad.Start
+F.Intrinsic.Control.SetErrorHandler("FormLotUser_UnLoad_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+
+F.Intrinsic.Control.If(V.ODBC.Con.State,=,1)
+	F.ODBC.Connection!Con.Close
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("FormLotUser_UnLoad_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+Program.Sub.FormLotUser_UnLoad.End
+
+Program.Sub.cmdSave_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdSave_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+V.Local.sUser.Declare(String,"")
+V.Local.iUser.Declare(Long,0)
+V.Local.sText.Declare(String,"")
+V.Local.sField.Declare(String,"")
+V.Local.sSql.Declare(String,"")
+V.Local.iBirunID.Declare(Long,0)
+V.Local.iRptID.Declare(Long,0)
+V.Local.iLogID.Declare(Long,0)
+
+F.Intrinsic.Control.If(V.DataTable.Lot.RowCount--,<>,-1)
+	
+	F.Data.DataTable.SetValue("Label",-1,"Part",V.DataTable.Lot(V.DataTable.Lot.RowCount--).Part!FieldValTrim,"Quantity",V.DataTable.Lot(V.DataTable.Lot.RowCount--).Quantity!FieldValFLoat,"Lot",V.DataTable.Lot(V.DataTable.Lot.RowCount--).Lot!FieldValTrim)
+	F.Intrinsic.Control.For(V.Local.iUser,1,9,1)
+		F.Intrinsic.String.Build("User_Field_{0}",V.Local.iUser,V.Local.sField)
+		F.Intrinsic.String.Build("txtUserField{0}",V.Local.iUser,V.Local.sUser)
+		V.Local.sText.Set(V.Screen.FormLotUser![V.Local.sUser].Text)
+		F.Data.DataTable.SetValue("Lot",-1,V.Local.sField,V.Local.sText.Trim)
+		F.Data.DataTable.SetValue("Label",-1,V.Local.sField,V.Local.sText.Trim)
+	F.Intrinsic.Control.Next(V.Local.iUser)
+	
+	F.ODBC.Connection!Con.OpenCompanyConnection
+	F.Data.DataTable.SaveToDB("Lot","con","Item_Master","Lot",2,"Lot@!@Lot*!*User_Field_1@!@User_Field_1*!*User_Field_2@!@User_Field_2*!*User_Field_3@!@User_Field_3*!*User_Field_4@!@User_Field_4*!*User_Field_5@!@User_Field_5*!*User_Field_6@!@User_Field_6*!*User_Field_7@!@User_Field_7*!*User_Field_8@!@User_Field_8*!*User_Field_9@!@User_Field_9")
+	
+	F.Intrinsic.String.Build("Select Top 1 UM_Inventory From V_Inventory_Mstr Where Part = '{0}'",V.DataTable.Lot(V.DataTable.Lot.RowCount--).Part!FieldValTrim,V.Local.sSql)
+	
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSql,V.Local.sText)
+	
+	F.Data.DataTable.SetValue("Label",-1,"Inv_UM",V.Local.sText.Trim)
+	
+	F.ODBC.Connection!con.Close
+	
+	'printing codesoft label
+	F.Global.BI.GetRunID(V.Local.iBiRunID)
+	F.Global.BI.GetIDFromName("GCG_6190_WIP_FG.lab",V.Local.iRptID)
+	F.Global.BI.StartLogging(V.Local.iBiRunID,V.Local.iRptID,-1,"GCG_6190_WIP_FG",V.Local.iLogID)
+	
+	F.Global.BI.StopLogging(V.Local.iLogID)
+	
+	F.Global.BI.PrintCodesoftLabelFromDataTable(V.Local.iBiRunID,V.Local.iLogID,"Label","",True)
+	
+	F.Intrinsic.Control.CallSub(FormLotUser_UnLoad)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdSave_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6190_Lot_User_Fields.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormLotUser_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.Got_Focus.Start
+F.Intrinsic.Control.SetErrorHandler("Got_Focus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+
+Gui.FormLotUser.[V.Args.ControlName].SelectAll
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Got_Focus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6190_Lot_User_Fields.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormLotUser_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Got_Focus.End
+
+Program.Sub.Set_Label_Captions.Start
+F.Intrinsic.Control.SetErrorHandler("Set_Label_Captions_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+V.Local.iID.Declare(Long,0)
+V.Local.sCaption.Declare(String,"")
+V.Local.sUser.Declare(String,"")
+V.Local.iUser.Declare(Long,0)
+V.Local.sLabel.Declare(String,"")
+
+F.Data.DataTable.Create("Label",True)
+F.Data.DataTable.AddColumn("Label","Part",String)
+F.Data.DataTable.AddColumn("Label","Lot",String)
+F.Data.DataTable.AddColumn("Label","Inv_UM",String)
+F.Data.DataTable.AddColumn("Label","Quantity",Float)
+F.Data.DataTable.AddColumn("Label","UField1",String)
+F.Data.DataTable.AddColumn("Label","UField2",String)
+F.Data.DataTable.AddColumn("Label","UField3",String)
+F.Data.DataTable.AddColumn("Label","UField4",String)
+F.Data.DataTable.AddColumn("Label","UField5",String)
+F.Data.DataTable.AddColumn("Label","UField6",String)
+F.Data.DataTable.AddColumn("Label","UField7",String)
+F.Data.DataTable.AddColumn("Label","UField8",String)
+F.Data.DataTable.AddColumn("Label","UField9",String)
+F.Data.DataTable.AddColumn("Label","User_Field_1",String)
+F.Data.DataTable.AddColumn("Label","User_Field_2",String)
+F.Data.DataTable.AddColumn("Label","User_Field_3",String)
+F.Data.DataTable.AddColumn("Label","User_Field_4",String)
+F.Data.DataTable.AddColumn("Label","User_Field_5",String)
+F.Data.DataTable.AddColumn("Label","User_Field_6",String)
+F.Data.DataTable.AddColumn("Label","User_Field_7",String)
+F.Data.DataTable.AddColumn("Label","User_Field_8",String)
+F.Data.DataTable.AddColumn("Label","User_Field_9",String)
+
+F.Data.DataTable.AddRow("Label","Part"," ")
+
+F.Intrinsic.Control.For(V.Local.iID,402256,402264,1)
+	F.Global.General.ReadOption(V.Local.iID,1,"","0000",V.Local.sCaption)
+	F.Intrinsic.Math.Add(V.Local.iUser,1,V.Local.iUser)
+	F.Intrinsic.String.Build("lblUserField{0}",V.Local.iUser,V.Local.sUser)
+	Gui.FormLotUser.[V.Local.sUser].Caption(V.Local.sCaption)
+	F.Intrinsic.String.Build("UField{0}",V.Local.iUser,V.Local.sLabel)
+	F.Data.DataTable.SetValue("Label",-1,v.Local.sLabel,V.Local.sCaption)
+F.Intrinsic.Control.Next(V.Local.iID)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Set_Label_Captions_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6190_Lot_User_Fields.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormLotUser_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Set_Label_Captions.End
+
+Program.Sub.Build_Empty_DT.Start
+F.Intrinsic.Control.SetErrorHandler("Build_Empty_DT_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+
+F.ODBC.Connection!Con.OpenCompanyConnection
+
+F.Data.DataTable.CreateFromSQL("Lot","con","Select Part, Quantity, Lot, User_Field_1, User_Field_2, User_Field_3, User_Field_4, User_Field_5, User_Field_6, User_Field_7, User_Field_8, User_Field_9 From V_Item_Master Where Part = '-1'",True)
+
+F.Data.DataTable.DeleteRow("Lot")
+F.Data.DataTable.AcceptChanges("Lot")
+
+F.ODBC.Connection!Con.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Build_Empty_DT_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6190_Lot_User_Fields.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormLotUser_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Build_Empty_DT.End
